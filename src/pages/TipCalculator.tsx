@@ -1,10 +1,10 @@
-import './TipCalculator.scss';
+import '../styles/TipCalculator.scss';
 import { ChangeEvent, useEffect, useState } from 'react';
-import ResultsBox from '../ResultsBox/ResultsBox';
-import Input from '../Input/Input';
-import percentList from '../../data/percentList';
-import Dollar from '../../assets/icon-dollar.svg';
-import Person from '../../assets/icon-person.svg';
+import ResultsBox from '../components/ResultsBox/ResultsBox';
+import Input from '../components/Input/Input';
+import percentList from '../data/percentList';
+import Dollar from '../assets/icon-dollar.svg';
+import Person from '../assets/icon-person.svg';
 
 const initialValues = {
   bill: '',
@@ -15,7 +15,6 @@ const initialValues = {
 
 const TipCalculator = () => {
   const [values, setValues] = useState(initialValues);
-  const [errorMessage, setErrorMessage] = useState('');
   const [totalTip, setTotalTip] = useState(0);
   const [totalBill, setTotalBill] = useState(0);
   const { bill } = values;
@@ -43,8 +42,10 @@ const TipCalculator = () => {
   }, [customPercent]);
 
   const changeHandler = (e: ChangeEvent<HTMLInputElement>) => {
-    const { value } = e.target;
-    setValues({ ...values, [e.target.name]: +value });
+    if (+e.target.value >= 0) {
+      const { value } = e.target;
+      setValues({ ...values, [e.target.name]: +value });
+    }
   };
 
   return (
@@ -53,9 +54,13 @@ const TipCalculator = () => {
         <div
           className="tipCalculator__form"
         >
-          <span className="tipCalculator__label">Bill</span>
+          <span className="tipCalculator__label">
+            Bill
+          </span>
           <div className="tipCalculator__input-wrapper">
             <Input
+              min="0"
+              testId="bill-input"
               value={bill}
               onChange={changeHandler}
               type="number"
@@ -70,13 +75,13 @@ const TipCalculator = () => {
             {percentList.map((percent) => (
               <button
                 key={percent}
+                data-test-id="percent-button"
                 className="tipCalculator__button"
                 type="button"
                 onClick={() => {
                   setValues({
                     ...values,
                     tipPercent: percent,
-                    customPercent: '',
                   });
                 }}
               >
@@ -84,14 +89,11 @@ const TipCalculator = () => {
               </button>
             ))}
             <Input
+              testId="custom-percent-input"
               className="tipCalculator__input tipCalculator__input--custom"
               value={customPercent}
-              onChange={(e) => {
-                setValues({
-                  ...values,
-                  customPercent: e.target.value,
-                });
-              }}
+              onChange={changeHandler}
+              min="0"
               placeholder="Custom"
               type="number"
               name="customPercent"
@@ -99,12 +101,14 @@ const TipCalculator = () => {
           </div>
           <div className="tipCalculator__label-wrapper">
             <span className="tipCalculator__label">Number of People</span>
-            {personCount === '0' && (
-              <span className="tipCalculator__error">{errorMessage}</span>
+            {(+personCount === 0 && personCount !== '') && (
+              <span className="tipCalculator__error">Can`t be zero</span>
             )}
           </div>
           <div className="tipCalculator__input-wrapper">
             <Input
+              testId="people-count-input"
+              min="1"
               onChange={(e) => {
                 changeHandler(e);
               }}

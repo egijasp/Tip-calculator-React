@@ -3,31 +3,15 @@
 
 * {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
 }
 
 body {
   background-color: hsl(185, 41%, 84%);
   font-family: 'Space Mono', monospace;
   color: hsl(186, 14%, 43%);
-
 }
 
-input {
+input, button {
   font-family: inherit;
   font-size: 24px;
-  color: hsl(183, 100%, 15%);
 }
-
-button {
-  font-family: inherit;
-}
-
-/*hsl(172, 67%, 45%);*/
-/*hsl(183, 100%, 15%);*/
-/*hsl(186, 14%, 43%);*/
-/*hsl(184, 14%, 56%);*/
-/*hsl(185, 41%, 84%);*/
-/*hsl(189, 41%, 97%);*/
-/*hsl(0, 0%, 100%);*/

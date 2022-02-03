@@ -1,15 +1,15 @@
 .tipCalculator {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(315px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   background-color: hsl(0, 0%, 100%);
   padding: 30px;
-  gap: 40px;
+  gap: 10px;
   border-radius: 20px;
   width: 100%;
 
   &__container {
     display: grid;
-    grid-template-columns: minmax(375px, 1000px);
+    grid-template-columns: minmax(350px, 1000px);
     margin-top: 50px;
   }
 
@@ -38,6 +38,10 @@
     color: hsl(183, 100%, 15%);
     text-align: right;
     font-weight: 700;
+
+    &:invalid {
+     outline: 2px solid saddlebrown ;
+    }
 
     &::placeholder {
       text-align: right;
@@ -81,12 +85,17 @@
     cursor: pointer;
     font-weight: 700;
     padding: 5px;
-    color: #ffffff;
+    color: hsl(0, 0%, 100%);
     font-size: 20px;
-    transition: background-color 0.2s, color 0.2s;
+    transition: background-color 0.3s, color 0.3s;
+
+    &:focus {
+      background-color: hsl(172, 67%, 45%);
+      color: hsl(183, 100%, 15%);
+    }
 
     &:hover {
-      background-color: hsl(172, 67%, 45%);
+      background-color: #9FE8DF;
       color: hsl(183, 100%, 15%);
     }
   }
@@ -110,5 +119,11 @@
   color: hsl(183, 100%, 15%);
   background-color: hsl(172, 67%, 45%);
   transition: 0.2s;
+}
+
+@media screen and (min-width: 669px) {
+  .tipCalculator {
+    gap: 40px;
+  }
 }
 

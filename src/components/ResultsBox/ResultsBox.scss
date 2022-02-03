@@ -3,16 +3,27 @@
   border-radius: 8px;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  padding: 40px 30px 30px 30px;
+  padding: 30px 30px 30px 30px;
   justify-content: space-between;
+  gap: 20px;
+
+  &__text-wrapper {
+    display: grid;
+    gap: 5px;
+  }
 
   &__text {
     font-weight: 700;
+    font-size: 14px;
     color: hsl(189, 41%, 97%);
   }
 
+  &__person {
+    font-size: 13px;
+  }
+
   &__result {
-    font-size: 40px;
+    font-size: 25px;
     color: hsl(172, 67%, 45%);
     font-weight: 700;
   }
@@ -31,14 +42,32 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    padding: 10px;
+    padding: 5px;
 
     &:hover {
-
+      background-color: #9FE8DF;
     }
   }
 }
 
 .right {
   justify-self: right;
+}
+
+@media screen and (min-width: 669px) {
+  .resultsBox {
+    &__text {
+      font-size: 16px;
+    }
+
+    &__person {
+      font-size: 14px;
+      font-weight: 700;
+      padding-top: 5px;
+    }
+
+    &__result {
+      font-size: 45px;
+    }
+  }
 }
