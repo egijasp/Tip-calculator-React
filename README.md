@@ -15,11 +15,10 @@ You can try it out: https://tip-calculator-egija.netlify.app/
 ### Responsiveness
 
 <img src="./src/assets/images/phone.PNG" width="400">
----
+
 <img src="./src/assets/images/capture2.PNG" width="600">
----
+
 <img src="./src/assets/images/deskop.PNG" width="900">
----
 
 ---
 
