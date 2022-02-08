@@ -6,119 +6,111 @@
   gap: 10px;
   border-radius: 20px;
   width: 100%;
-
-  &__container {
-    display: grid;
-    grid-template-columns: minmax(350px, 1000px);
-    margin-top: 50px;
-  }
-
-  &__form {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 10px;
-    color: hsl(186, 14%, 43%);
-    font-weight: 700;
-  }
-
-  &__label {
-    padding-top: 20px;
-  }
-
-  &__input-wrapper {
-    position: relative;
-  }
-
-  &__input {
-    width: 100%;
-    border: none;
-    background-color: hsl(189, 41%, 97%);
-    border-radius: 4px;
-    padding: 0px 15px;
-    color: hsl(183, 100%, 15%);
-    text-align: right;
-    font-weight: 700;
-
-    &:invalid {
-     outline: 2px solid saddlebrown ;
-    }
-
-    &::placeholder {
-      text-align: right;
-      color: hsl(184, 14%, 56%);
-    }
-
-    &::-webkit-outer-spin-button,
-    &::-webkit-inner-spin-button {
-      -webkit-appearance: none;
-      margin: 0;
-    }
-
-    &:focus {
-      outline: 2px solid hsl(172, 67%, 45%);
-    }
-
-    &--custom {
-      &::placeholder {
-        text-align: center;
-      }
-    }
-  }
-
-  &__icon {
-    position: relative;
-    top: -27px;
-    left: 15px;
-  }
-
-  &__button-wrapper {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, 140px);
-    justify-content: space-between;
-    gap: 10px;
-  }
-
-  &__button {
-    border: none;
-    border-radius: 5px;
-    background-color: hsl(183, 100%, 15%);
-    cursor: pointer;
-    font-weight: 700;
-    padding: 5px;
-    color: hsl(0, 0%, 100%);
-    font-size: 20px;
-    transition: background-color 0.3s, color 0.3s;
-
-    &:focus {
-      background-color: hsl(172, 67%, 45%);
-      color: hsl(183, 100%, 15%);
-    }
-
-    &:hover {
-      background-color: #9FE8DF;
-      color: hsl(183, 100%, 15%);
-    }
-  }
-
-  &__label-wrapper {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  }
-
-  &__error {
-    color: saddlebrown;
-    align-self: end;
-  }
 }
 
-.custom {
-  text-align: center;
+.tipCalculator__container {
+  display: grid;
+  grid-template-columns: minmax(350px, 1000px);
+  margin-top: 50px;
 }
-.active {
+
+.tipCalculator__form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  color: hsl(186, 14%, 43%);
+  font-weight: 700;
+}
+
+.tipCalculator__label {
+  padding-top: 20px;
+}
+
+.tipCalculator__input-wrapper {
+  position: relative;
+}
+
+.tipCalculator__input {
+  width: 100%;
+  border: none;
+  background-color: hsl(189, 41%, 97%);
+  border-radius: 4px;
+  padding: 0px 15px;
   color: hsl(183, 100%, 15%);
-  background-color: hsl(172, 67%, 45%);
-  transition: 0.2s;
+  text-align: right;
+  font-weight: 700;
+
+  &:invalid {
+    outline: 2px solid saddlebrown;
+  }
+
+  &::placeholder {
+    text-align: right;
+    color: hsl(184, 14%, 56%);
+  }
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  &:focus {
+    outline: 2px solid hsl(172, 67%, 45%);
+  }
+}
+
+.tipCalculator__input--custom {
+  &::placeholder {
+    text-align: center;
+  }
+}
+
+
+.tipCalculator__icon {
+  position: relative;
+  top: -27px;
+  left: 15px;
+}
+
+.tipCalculator__button-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 140px);
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.tipCalculator__button {
+  border: none;
+  border-radius: 5px;
+  background-color: hsl(183, 100%, 15%);
+  cursor: pointer;
+  font-weight: 700;
+  padding: 5px;
+  color: hsl(0, 0%, 100%);
+  font-size: 20px;
+  transition: background-color 0.3s, color 0.3s;
+
+  &:focus {
+    background-color: hsl(172, 67%, 45%);
+    color: hsl(183, 100%, 15%);
+  }
+
+  &:hover {
+    background-color: #9FE8DF;
+    color: hsl(183, 100%, 15%);
+  }
+}
+
+.tipCalculator__label-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.tipCalculator__error {
+  color: saddlebrown;
+  align-self: end;
 }
 
 @media screen and (min-width: 669px) {
@@ -126,4 +118,3 @@
     gap: 40px;
   }
 }
-

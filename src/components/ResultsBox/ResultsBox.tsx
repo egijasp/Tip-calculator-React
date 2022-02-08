@@ -22,12 +22,12 @@ const ResultsBox:FC<ResultBoxProps> = ({
         / person
       </span>
     </div>
-    <div className="resultsBox__result right">
+    <div className="resultsBox__result resultsBox__result--right">
       $
       {tipValue.toFixed(2) === 'NaN' || +values.personCount === 0 ? '0.00' : tipValue.toFixed(2)}
     </div>
     <div>
-      <span className="resultsBox__text left">
+      <span className="resultsBox__text">
         Total
       </span>
       <br />
@@ -35,7 +35,7 @@ const ResultsBox:FC<ResultBoxProps> = ({
         / person
       </span>
     </div>
-    <div className="resultsBox__result right">
+    <div className="resultsBox__result resultsBox__result--right">
       $
       {total.toFixed(2) === 'NaN' || +values.personCount === 0 ? '0.00' : total.toFixed(2)}
     </div>
